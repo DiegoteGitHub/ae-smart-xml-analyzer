@@ -23,6 +23,12 @@ public class SmartXMLAnalyzerApp {
     private static final List<MatchingStrategy> MATCHING_STRATEGIES = Arrays.asList(new ElementAtributesMatching(), new ElementTextMatching());
 
     public static void main(String[] args) {
+    	
+    	if (args == null || args.length < 3) {
+    		System.out.println("USAGE: <HTML 1 original> <HTML 2 to compare> <element ID to find in HTML 2>");
+    		return;
+    	}
+    	
         final String firstHtmlPath = args[0];
         final String secondHtmlPath = args[1];
         final String elementIdToFind = args[2];
